@@ -8,8 +8,14 @@ public class JokeServiceImpl implements JokeService {
 
     private final ChuckNorrisQuotes chuckNorrisQuotes;
 
-    public JokeServiceImpl() {
-        this.chuckNorrisQuotes = new ChuckNorrisQuotes();
+//    bezparametrowy konstruktor byl uzyty przed tym jak utworzylismy plik konfiguracyjny ChuckConfiguration,
+//    i on mial wtedy domyslne Autowired i szukal sobie tego bean
+//    public JokeServiceImpl() {
+//        this.chuckNorrisQuotes = new ChuckNorrisQuotes();
+//    }
+
+    public JokeServiceImpl(ChuckNorrisQuotes chuckNorrisQuotes) {
+        this.chuckNorrisQuotes = chuckNorrisQuotes;
     }
 
     @Override
